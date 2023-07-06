@@ -13,7 +13,7 @@ CREATE TABLE employees
 
 CREATE TABLE customers
 (
-    customer_id int PRIMARY KEY,
+    customer_id text PRIMARY KEY,
 	company_name text NOT NULL,
 	contact_name text
 );
@@ -21,7 +21,7 @@ CREATE TABLE customers
 CREATE TABLE orders
 (
     order_id int PRIMARY KEY,
-	customer_id int REFERENCES customers(customer_id) NOT NULL,
+	customer_id text REFERENCES customers(customer_id) NOT NULL,
 	employee_id int REFERENCES employees(employee_id) NOT NULL,
 	order_date date,
 	ship_city text
